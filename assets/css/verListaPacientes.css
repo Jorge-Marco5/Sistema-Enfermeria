@@ -1,0 +1,135 @@
+:root{
+    --color-secundario: #2992a5;
+}
+
+body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    background: rgba(75, 168, 255, 0.493);
+}
+
+.container{
+    gap: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.card{
+    flex-grow: 1;
+    flex-basis: 200;
+    width: 250px;
+    height: 500px;
+    background: white;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.marginObjectsCard{
+    margin: 20px;
+}
+
+.card-footer{
+    margin-top: 15px;
+}
+
+.card-text{
+ text-align: justify;
+}
+
+.search-container {
+    background-color: var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.input-group-prepend{
+    display: relative;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    float: left;
+    width: 7%;
+}
+
+.table-container{
+    height: auto;
+    align-items: flex-start;
+}
+
+/*Funciones para la tabla*/
+.user-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-secundario);
+    color: rgb(0, 0, 0);
+    align-items: flex-start;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+}
+
+.user-table th {
+    background-color: var(--color-secundario);
+    color: rgb(0, 0, 0);
+}
+
+#userTableBody {
+    display: block;
+    max-height: 600px; /* Ajusta la altura del scroll */
+    width: 100%;
+}
+
+#userTableBody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#userTableBody td {
+
+    background-color: white;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #2d8ca2;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.icon{
+    color: var(--color-secundario);
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+}
+
+.form-control{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+}

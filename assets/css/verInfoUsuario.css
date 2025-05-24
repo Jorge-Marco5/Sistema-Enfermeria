@@ -1,0 +1,99 @@
+body{
+    height: 100vh;  
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: rgba(75, 168, 255, 0.493);
+}
+
+.container{
+    gap: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerInfo{
+    gap: 10px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #132538;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a {
+    color: #0099ff; 
+    font-size: 20px;
+    text-decoration: none;
+    background-color: transparent;
+}
+.tab-content{
+    width: 100%;
+    gap: 10px;
+}
+
+.nombreEtiqueta{
+    font-size: 20px;
+    font-weight: bold;
+    color: #132538;
+}
+
+.contenidoEtiqueta{
+    padding: 10px;
+    font-size: 20px;
+    color: #132538;
+    background-color: #f3f3f3;
+    text-align: justify;
+    border-color: #132538;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.contenidoImagen{
+    max-width: 500px;
+    min-width: 100px;
+    max-height: auto;
+    padding: 10px;
+    font-size: 20px;
+    color: #132538;
+    background-color: #f3f3f3;
+    text-align: justify;
+    border-color: #132538;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.row{
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .card .card-header{
+        display: contents;
+    }
+}

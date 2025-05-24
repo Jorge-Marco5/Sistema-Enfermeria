@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
+
+:root{
+    --color-primario: #000020;
+    --color-secundario: #167895;
+    --color-aceptar:#007A5B;
+    --color-peligro:#ECB22F;
+    --color-error:#E01E5B;
+    --color-dark:#212529;
+    --color-light:#EBEAEB;
+    --altura-tarjeta: 320px;
+    
+}
+
+body {
+    background-image: url('../Img/Fondo.png'); /* URL de la imagen */
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Login-card {
+    padding: 2rem 4rem 4rem 4rem;
+    width: 20rem;
+    height: var(--altura-tarjeta);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.Login-card1 {
+    padding: 2rem 4rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    width: 20rem;
+    height: var(--altura-tarjeta);
+    background-color: var(--color-primario);
+}
+
+h1{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: var(--color-dark);
+    margin-bottom:10px; 
+    margin-top: 2rem;
+}
+
+.title1{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: var(--color-light);
+    margin-bottom:10px; 
+    margin-top: 2rem;
+}
+
+.items_description{
+    font-family: "Open Sans", sans-serif;
+    color: #343434;
+    font-size: 12px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container{
+    background-color: rgb(255, 255, 255, 1)  ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 250px;
+    height: 250px;
+}
+.img{
+    width: 250px;
+    height: 250px;
+}
+
+.input-container {
+    display: flex;
+    text-align: center;;
+    background: #ffffff;
+    border-radius:8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1.3px solid #8e8e8e;
+}
+
+.input-container .icon {
+    background: #ffffff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #ffffff;
+    
+}
+.input-container input::placeholder {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.input-container .iconify {
+    color: var(--color-secundario);
+    font-size: 20px;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-secundario);
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-primario);
+}
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+body{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    background-color: #000020;
+    display: flex;
+}
+.title1{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: var(--color-light);
+    margin-bottom:10px; 
+    margin-top: 2rem;}
+
+  .login-wrapper {
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-size: 8px;
+    flex-direction: column;  
+    height: auto;
+  }
+
+  .Login-card1, .Login-card {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+  .img-container {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .img-container img {
+    width: 150px;
+    height: auto;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container input {
+    width: 100%;
+  }
+
+  .icon {
+    display: none;
+  }
+}

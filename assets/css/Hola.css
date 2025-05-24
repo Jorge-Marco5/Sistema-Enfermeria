@@ -1,0 +1,45 @@
+body{
+    height: 100vh;  
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: rgba(75, 168, 255, 0.493);
+}
+
+.container{
+    gap: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    flex-grow: 1;
+    flex-basis: 200;
+    width: 250px;
+    height: 500px;
+    background: white;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.marginObjectsCard{
+    margin: 20px;
+}
+
+.card-footer{
+    margin-top: 15px;
+}
+
+.card-text{
+ text-align: justify;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .card .card-header{
+        display: contents;
+    }
+}
