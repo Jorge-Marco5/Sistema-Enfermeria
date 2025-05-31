@@ -19,47 +19,51 @@ CREATE TABLE Personas (
 );
 
 CREATE TABLE HistorialMedico (
-    id_historial INT PRIMARY KEY,
+    id_historial INT PRIMARY KEY SERIAL,
     id_persona INT REFERENCES Personas(id_persona) ON DELETE CASCADE,
     enfermedades TEXT, -- Lista separada por comas si es necesario
     alergias TEXT,
     cirugias TEXT,
     medicacion TEXT,
-    discapacidad TEXT
+    discapacidad TEXT,
+    matricula VARCHAR(100)
 );
 
 CREATE TABLE SaludMental (
-    id_mental INT PRIMARY KEY,
+    id_mental INT PRIMARY KEY SERIAL,
     id_persona INT REFERENCES Personas(id_persona) ON DELETE CASCADE,
     diagnostico TEXT,
     terapia TEXT,
     contacto_terapeuta VARCHAR(100),
-    telefono_terapeuta VARCHAR(20)
+    telefono_terapeuta VARCHAR(20),
+    matricula VARCHAR(100)
 );
 
 CREATE TABLE Vacunacion (
-    id_vacuna INT PRIMARY KEY,
+    id_vacuna INT PRIMARY KEY SERIAL,
     id_persona INT REFERENCES Personas(id_persona) ON DELETE CASCADE,
-    nombre_vacuna VARCHAR(100) NOT NULL,
-    fecha_aplicacion DATE NOT NULL
+    direccion_img VARCHAR(100) NOT NULL,
+    matricula VARCHAR(100)
 );
 
 CREATE TABLE SeguroMedico (
-    id_seguro INT PRIMARY KEY,
+    id_seguro INT PRIMARY KEY SERIAL,
     id_persona INT REFERENCES Personas(id_persona) ON DELETE CASCADE,
     aseguradora VARCHAR(100),
     numero_poliza VARCHAR(50),
     hospital_referencia VARCHAR(100),
-    medico_cabecera VARCHAR(100)
+    medico_cabecera VARCHAR(100),
+    matricula VARCHAR(100)
 );
 
 CREATE TABLE AutorizacionesMedicas (
-    id_autorizacion INT PRIMARY KEY,
+    id_autorizacion INT PRIMARY KEY SERIAL,
     id_persona INT REFERENCES Personas(id_persona) ON DELETE CASCADE,
     primeros_auxilios BOOLEAN DEFAULT FALSE,
     administracion_medicamentos BOOLEAN DEFAULT FALSE,
     medicamentos_autorizados TEXT,
-    restricciones_medicas TEXT
+    restricciones_medicas TEXT,
+    matricula VARCHAR(100)
 );
 
 CREATE TABLE administradores (
