@@ -15,7 +15,7 @@
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/Controllers/logout.php">Cerrar sesión
+            <a class="nav-link" href="../Controllers/logout.php">Cerrar sesión
               <span class="sr-only">(current)</span>
             </a>
           </li>

@@ -106,7 +106,7 @@ include 'navbar.php';
   </script>
   <!--Contenido de la pagina-->
 
-  <form id="createUserForm" action="../../Controllers/aggUserDataController.php" method="POST"
+  <form id="createUserForm" action="../Controllers/aggUserDataController.php" method="POST"
     enctype="multipart/form-data">
     <div class="containerInfo container mt-4">
       <h2 class="card-title">Datos de salud del paciente</h2>

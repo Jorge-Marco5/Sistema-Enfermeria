@@ -8,7 +8,7 @@
     <link rel="icon" href="../assets/img/Logo.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                 <?php endif; ?>
 
                 <h1>Iniciar sesión</h1>
-                <form action="../Controllers/LoginController.php" method="POST">
+                <form action="../Controllers/loginController.php" method="POST">
                     <span class="items_description">Matricula</span>
                     <div class="input-container">
                         <span class="icon"><i class="iconify" data-icon="ph:user-fill"></i></span>
