@@ -29,7 +29,7 @@ CREATE TABLE HistorialMedico (
 );
 
 CREATE TABLE SaludMental (
-    id_mental SERIAL INT PRIMARY KEY,
+    id_mental SERIAL PRIMARY KEY,
     diagnostico TEXT,
     terapia TEXT,
     contacto_terapeuta VARCHAR(100),
@@ -38,14 +38,14 @@ CREATE TABLE SaludMental (
 );
 
 CREATE TABLE Vacunacion (
-    id_vacuna SERIAL INT PRIMARY KEY,
+    id_vacuna SERIAL PRIMARY KEY,
     nombre_vacuna VARCHAR(100) NOT NULL,
     fecha_aplicacion DATE NOT NULL,
     matricula VARCHAR(10)
 );
 
 CREATE TABLE SeguroMedico (
-    id_seguro SERIAL INT PRIMARY KEY,
+    id_seguro SERIAL PRIMARY KEY,
     aseguradora VARCHAR(100),
     numero_poliza VARCHAR(50),
     hospital_referencia VARCHAR(100),
@@ -54,7 +54,7 @@ CREATE TABLE SeguroMedico (
 );
 
 CREATE TABLE AutorizacionesMedicas (
-    id_autorizacion SERIAL INT PRIMARY KEY,
+    id_autorizacion SERIAL PRIMARY KEY,
     primeros_auxilios BOOLEAN DEFAULT FALSE,
     administracion_medicamentos BOOLEAN DEFAULT FALSE,
     medicamentos_autorizados TEXT,
