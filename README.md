@@ -32,13 +32,13 @@ Sistema Enfermeria
 
 ##Descripcion de las carpetas
 
--**assets**: contiene todo el contenido de estilos css, imagenes y scripts necesarios para la correcta ejecucion y visualizacion de la pagina.-
--**config**: contiene el archivo de la configuracion de la conexion ala base de datos en postgresql-
--**Controllers**: contiene toda la logica y funcionalidades del programa, asi como consultas a la base de datos y manejo de los datos que se muestran en el proyecto.-
--**db**: contiene el archivo .sql de la estructura de la base de datos.-
--**documentacion**: contiene los distintos archivos de la documentacion del proyecto.-
--**views**: contiene las plantillas html o php de las vistas de las distintas paginas del programa.-
--**vendor**: Carpeta generada automáticamente por Composer para las dependencias externas.-
+* **assets**: contiene todo el contenido de estilos css, imagenes y scripts necesarios para la correcta ejecucion y visualizacion de la pagina.-
+* **config**: contiene el archivo de la configuracion de la conexion ala base de datos en postgresql-
+* **Controllers**: contiene toda la logica y funcionalidades del programa, asi como consultas a la base de datos y manejo de los datos que se muestran en el proyecto.-
+* **db**: contiene el archivo .sql de la estructura de la base de datos.-
+* **documentacion**: contiene los distintos archivos de la documentacion del proyecto.-
+* **views**: contiene las plantillas html o php de las vistas de las distintas paginas del programa.-
+* **vendor**: Carpeta generada automáticamente por Composer para las dependencias externas.-
 
 ##Instalacion del proyecto
 
