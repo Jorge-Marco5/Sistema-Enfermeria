@@ -1,8 +1,8 @@
-#Sistema de control de registros medicos de enfermeria#
+# Sistema de control de registros medicos de enfermeria
 
 Sistema de control de registros medicos de enfermeria para el Instituto Tecnologico Superior de Poza Rica
 
-##Estructura del proyecto##
+## Estructura del proyecto
 ```
 Sistema Enfermeria
 ├─ assets
@@ -30,7 +30,7 @@ Sistema Enfermeria
 
 ```
 
-##Descripcion de las carpetas##
+## Descripcion de las carpetas
 
 * **assets**: contiene todo el contenido de estilos css, imagenes y scripts necesarios para la correcta ejecucion y visualizacion de la pagina.
 * **config**: contiene el archivo de la configuracion de la conexion ala base de datos en postgresql
@@ -40,7 +40,7 @@ Sistema Enfermeria
 * **views**: contiene las plantillas html o php de las vistas de las distintas paginas del programa.
 * **vendor**: Carpeta generada automáticamente por Composer para las dependencias externas.
 
-##Instalacion del proyecto##
+## Instalacion del proyecto
 
 Para la correcta instalacion del proyecto son necesarias estas dos caracteristricas:
 
