@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que realiza la descarga de un reporte con los datos medicos del usuario
+*/
 require '../config/conexion.php';
 require '../vendor/autoload.php';
 

@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que obtiene la lista de discapacidades registradas en la base de datos
+*/
 include("../Config/conexion.php");
 
 $sql = "SELECT nombre_discapacidad FROM Lista_Discapacidades ORDER BY nombre_discapacidad ASC";

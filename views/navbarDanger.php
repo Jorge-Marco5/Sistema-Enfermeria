@@ -1,3 +1,4 @@
+<!--Barra superior que se muestra en las pantallas de emergencia-->
 <head>
   <link rel="icon" href="../assets/img/Logo.jpeg" type="image/x-icon">
 </head>

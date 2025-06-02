@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que obtiene la lista de enfermedades registradas en la base de datos
+*/
 include("../Config/conexion.php");
 
 $sql = "SELECT nombre_enfermedad FROM Lista_Enfermedades ORDER BY nombre_enfermedad ASC";

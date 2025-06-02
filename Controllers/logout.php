@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que lleva a cabo el cierre de sesion
+*/
 include "../Controllers/logger.php";
 session_start();
 session_unset();

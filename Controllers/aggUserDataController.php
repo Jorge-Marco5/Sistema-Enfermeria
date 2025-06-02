@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador para agregar un nuevo usuario
+*/
 require "../Config/conexion.php";
 include "logger.php";
 $errorMensaje = null;

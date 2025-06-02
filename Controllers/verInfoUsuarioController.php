@@ -1,4 +1,7 @@
 <?php 
+/*
+Controlador que obtiene la informacion de algun usuario registrado en el sistema
+*/
 include('../config/conexion.php');
 
 if (isset($_GET['matricula'])) {

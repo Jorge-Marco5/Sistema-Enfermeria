@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que agrega una consulta medicas del usuario que asiste a enfermeria
+*/
 require "../Config/conexion.php";
 include "logger.php";
 $errorMensaje = null;

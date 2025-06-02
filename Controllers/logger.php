@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que obtiene el registro de las acciones que se llevan a cabo dentro del sistema
+*/
 function registrarError($tipo, $mensaje, $ubicacion) {
     require "../Config/conexion.php";
 

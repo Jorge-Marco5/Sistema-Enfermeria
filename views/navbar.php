@@ -1,3 +1,4 @@
+<!--Barra superior que se muestra en todas las pantallas-->
 <head>
   <link rel="icon" href="../assets/img/Logo.jpeg" type="image/x-icon">
 </head>

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Archivo de configuracion de la conexion a la base de datosd en postgresql
+ */
 $host = "localhost";
 $port = "5432";
 $dbname = "sistemaenfermeria";

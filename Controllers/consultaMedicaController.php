@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que lleva a cabo el registro de las consultas medicas en la base de datos
+*/
 include "../Config/conexion.php";
 
 if (isset($_GET["matricula"])):

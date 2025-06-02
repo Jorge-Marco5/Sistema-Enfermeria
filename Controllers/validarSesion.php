@@ -1,4 +1,8 @@
 <?php
+/*
+Controlador que valida que haya una sesion activa valida y en caso de que no la haya,
+no permite el ingreso a ninguna pagina ni su informacion
+*/
 include("../Config/conexion.php");
 include "logger.php";
 session_start();

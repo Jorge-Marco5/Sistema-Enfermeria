@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que obtiene la lista de alergias registradas en la base de datos
+*/
 include("../Config/conexion.php");
 
 $sql = "SELECT nombre_alergia FROM Lista_Alergias ORDER BY nombre_alergia ASC";

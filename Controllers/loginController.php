@@ -1,4 +1,7 @@
 <?php
+/*
+Controlador que realiza el login de los administradores para ingresar al sistema
+*/
 require "../Config/conexion.php";
 require "logger.php";
 session_start();
