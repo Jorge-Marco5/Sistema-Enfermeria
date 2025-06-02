@@ -65,4 +65,4 @@ Una vez que tienes todo los paquetes correctamente instalados, abre una terminal
 
 Una vez que el comando se este ejecutando correctamente dirigete al navegador e ingresa a la siguiente ruta para ingresar al sistema:
 
-[localhost:8000/views/Login.php]
+[localhost:8000/views/Login.php](localhost:8000/views/Login.php)
