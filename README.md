@@ -51,7 +51,7 @@ Para la correcta instalacion del proyecto son necesarias estas dos caracteristri
 
 En la terminal dirigete a la ruta donde se instalara el proyecto e ingresa el siguiente comando:
 
-```git clone```
+```git clone <url del proyecto>```
 
 Una vez instalado el paquete dirigete y abre el siguiente archivo:
 
