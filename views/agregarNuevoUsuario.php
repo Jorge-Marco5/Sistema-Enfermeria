@@ -105,7 +105,7 @@ include 'navbar.php';
     }
   </script>
   <!--Contenido de la pagina-->
-
+  <!--Formulario para crear un nuevo usuario-->
   <form id="createUserForm" action="../Controllers/aggUserDataController.php" method="POST"
     enctype="multipart/form-data">
     <div class="containerInfo container mt-4">
@@ -303,6 +303,7 @@ include 'navbar.php';
       <button type="submit" class="btn-lg btn-info">Aceptar</button>
     </div>
   </form>
+  <!--fin del formulario-->
   </div>
 
   <!--SCRIPT PARA LA FUNCION DE BUSQUEDA DE ENFERMEDADES-->

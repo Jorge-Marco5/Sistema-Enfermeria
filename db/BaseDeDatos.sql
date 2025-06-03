@@ -66,24 +66,12 @@ CREATE TABLE administradores (
     id_Admin SERIAL PRIMARY KEY,
     nombreAdmin VARCHAR(100) NOT NULL,
     matricula VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL -- Se almacenará encriptada con `password_hash`
+    password VARCHAR(255) NOT NULL, -- Se almacenará encriptada con `password_hash`
+    fecha TIMESTAMP
 );
 
 ALTER TABLE Personas
 ADD COLUMN matricula VARCHAR(20) UNIQUE NOT NULL;
-
-
-SELECT 
-    p.nombre, p.apellido_paterno, p.apellido_materno, p.tipo_sangre,
-    p.contacto_emergencia_nombre, p.contacto_emergencia_telefono, p.contacto_emergencia_relacion,
-    h.enfermedades, h.alergias, h.medicacion,
-    s.aseguradora, s.numero_poliza, s.hospital_referencia,
-    a.primeros_auxilios, a.administracion_medicamentos, a.medicamentos_autorizados
-FROM Personas p
-LEFT JOIN HistorialMedico h ON p.id_persona = h.id_persona
-LEFT JOIN SeguroMedico s ON p.id_persona = s.id_persona
-LEFT JOIN AutorizacionesMedicas a ON p.id_persona = a.id_persona
-WHERE p.id_persona = 1;
 
 CREATE TABLE Log (
     id_log SERIAL PRIMARY KEY,
@@ -508,6 +496,15 @@ INSERT INTO Lista_Discapacidades (nombre_Discapacidad) VALUES
 ('	Discapacidad del aprendizaje emocional	'),
 ('	Discapacidad del aprendizaje social');
 
+
+CREATE TABLE Campañas (
+    id SERIAL PRIMARY KEY,
+    descripcionCampaña VARCHAR(255) NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFinal DATE NOT NULL,
+    fechaAgregada TIMESTAMP
+);
+
 SELECT nombre_Discapacidad FROM Lista_Discapacidades ORDER BY nombre_Discapacidad ASC;
 
 SELECT * FROM Lista_Discapacidades;
@@ -541,3 +538,17 @@ ON P.matricula = H.matricula
 INNER JOIN seguromedico S
 ON P.matricula = S.matricula
 WHERE P.matricula = '21ISIC050'
+
+
+SELECT 
+    p.nombre, p.apellido_paterno, p.apellido_materno, p.tipo_sangre,
+    p.contacto_emergencia_nombre, p.contacto_emergencia_telefono, p.contacto_emergencia_relacion,
+    h.enfermedades, h.alergias, h.medicacion,
+    s.aseguradora, s.numero_poliza, s.hospital_referencia,
+    a.primeros_auxilios, a.administracion_medicamentos, a.medicamentos_autorizados
+FROM Personas p
+LEFT JOIN HistorialMedico h ON p.id_persona = h.id_persona
+LEFT JOIN SeguroMedico s ON p.id_persona = s.id_persona
+LEFT JOIN AutorizacionesMedicas a ON p.id_persona = a.id_persona
+WHERE p.id_persona = 1;
+

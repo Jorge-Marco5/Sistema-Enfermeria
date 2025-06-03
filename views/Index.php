@@ -172,12 +172,11 @@ include 'navbar.php';
       </div>
       <div class="card-body">
         <span class="badge badge-<?php echo $success; ?>">información</span>
-        <h4 class="card-title mt-2">Correccion de información</h4>
-        <p class="card-text">En caso de que los datos de un paciente sean incorrectos, realiza las correcciones
-          correspondientes. </p>
+        <h4 class="card-title mt-2">Campañas medicas</h4>
+        <p class="card-text">Visualiza y registra algun evento clinico como campañas de vacunacion, informacion, etc</p>
       </div>
       <div class="card-footer">
-        <a href="pagPrueba.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
+        <a href="Campañas.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
       </div>
     </div>
     <div class="card">
@@ -191,7 +190,7 @@ include 'navbar.php';
           enfermería. </p>
       </div>
       <div class="card-footer">
-        <a href="pagPrueba.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
+        <a href="Administradores.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
       </div>
     </div>
     <div class="card" style="background-color:rgb(216, 216, 216);">
