@@ -106,60 +106,46 @@ include 'navbar.php';
   </script>
   <!--Contenido de la pagina-->
   <!--Formulario para crear un nuevo usuario-->
-  <form id="createUserForm" action="../Controllers/aggUserDataController.php" method="POST"
-    enctype="multipart/form-data">
-    <div class="containerInfo container mt-4">
-      <h2 class="card-title">Datos de salud del paciente</h2>
-      <div class="row g-4">
+<form id="createUserForm" action="../Controllers/aggUserDataController.php" method="POST" enctype="multipart/form-data">
+  <div class="containerInfo container mt-4">
+    <h2 class="card-title">Datos de salud del paciente</h2>
+    <div class="row g-4">
 
-        <!-- 🟦 Sección: Formulario Básico -->
-        <div class="col-md-6">
+      <!-- PASO 1 -->
+      <div class="step" id="step-1">
+        <div class="col-md-12">
           <div class="bg-white text-dark basic-form">
             <div class="card-body">
               <h5 class="card-title">Datos generales del paciente</h5>
-              <!-- Tus inputs para el formulario básico -->
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Matricula: </h1><input type="text" name="matricula" id="email"
-                  class="form-control" placeholder="Matricula" required>
+                <h1 class="nombreEtiqueta">Matricula: </h1><input type="text" name="matricula" class="form-control" placeholder="Matricula" required>
               </div>
-
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Nombre: </h1><input type="text" name="nombre" id="email" class="form-control"
-                  placeholder="Nombre del paciente" required>
+                <h1 class="nombreEtiqueta">Nombre: </h1><input type="text" name="nombre" class="form-control" placeholder="Nombre del paciente" required>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Apellido Paterno: </h1><input type="text" name="apellidoPaterno" id="email"
-                  class="form-control" placeholder="Apellido Paterno" required>
+                <h1 class="nombreEtiqueta">Apellido Paterno: </h1><input type="text" name="apellidoPaterno" class="form-control" placeholder="Apellido Paterno" required>
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Apellido Materno: </h1><input type="text" name="apellidoMaterno" id="email"
-                  class="form-control" placeholder="Apellido Materno" required>
+                <h1 class="nombreEtiqueta">Apellido Materno: </h1><input type="text" name="apellidoMaterno" class="form-control" placeholder="Apellido Materno" required>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Fecha de Nacimiento: </h1><input type="date" name="fechaNacimiento"
-                  id="email" class="form-control" placeholder="Fecha de Nacimiento" required>
+                <h1 class="nombreEtiqueta">Fecha de Nacimiento: </h1><input type="date" name="fechaNacimiento" class="form-control" placeholder="Fecha de Nacimiento" required>
               </div>
-
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Genero: </h1><select class="custom-select" name="Genero" id="tipoSangre"
-                  required>
-                  <option selected>Selecciona una opcion</option>
+                <h1 class="nombreEtiqueta">Genero: </h1>
+                <select class="custom-select" name="Genero" required>
+                  <option selected disabled>Selecciona una opcion</option>
                   <option value="Masculino">Masculino</option>
                   <option value="Femenino">Femenino</option>
                 </select>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Tipo de Sangre: </h1><select class="custom-select" name="tipoSangre"
-                  id="tipoSangre" required>
-                  <option selected>Selecciona una opcion</option>
+                <h1 class="nombreEtiqueta">Tipo de Sangre: </h1>
+                <select class="custom-select" name="tipoSangre" required>
+                  <option selected disabled>Selecciona una opcion</option>
                   <option value="O+">O+</option>
-                  <option value="O+">O-</option>
+                  <option value="O-">O-</option>
                   <option value="B+">B+</option>
                   <option value="B-">B-</option>
                   <option value="AB+">AB+</option>
@@ -168,126 +154,106 @@ include 'navbar.php';
                   <option value="A-">A-</option>
                 </select>
               </div>
-
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Rol: </h1><select class="custom-select" name="rol" id="email" required>
-                  <option selected>Selecciona una opcion</option>
+                <h1 class="nombreEtiqueta">Rol: </h1>
+                <select class="custom-select" name="rol" required>
+                  <option selected disabled>Selecciona una opcion</option>
                   <option value="Alumno">Alumno</option>
                   <option value="Docente">Docente</option>
                   <option value="Administrativo">Administrativo</option>
                 </select>
               </div>
-
-
+              <button type="button" class="btn btn-info mt-3" onclick="nextStep()">Siguiente</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-6">
+      <!-- PASO 2 -->
+      <div class="step" id="step-2" style="display:none;">
+        <div class="col-md-12">
           <div class="bg-white text-white basic-form">
             <div class="card-body">
               <h5 class="card-title">Datos de emergencia y seguro del paciente</h5>
-              <!-- Tus inputs para el formulario básico -->
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">En caso de emergencia llamar a: </h1><input type="text"
-                  name="contactoEmergenciaNombre" id="email" class="form-control" placeholder="Nombre del Tutor"
-                  required>
+                <h1 class="nombreEtiqueta">En caso de emergencia llamar a: </h1><input type="text" name="contactoEmergenciaNombre" class="form-control" placeholder="Nombre del Tutor" required>
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Numero de telefono: </h1><input type="text" name="contactoEmergenciaTelefono"
-                  id="email" class="form-control" placeholder="Numero de telefono del tutor" required>
+                <h1 class="nombreEtiqueta">Numero de telefono: </h1><input type="text" name="contactoEmergenciaTelefono" class="form-control" placeholder="Numero de telefono del tutor" required>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Parentesco: </h1><input type="text" name="contactoEmergenciaRelacion"
-                  id="email" class="form-control" placeholder="Parentesco del paciente" required>
+                <h1 class="nombreEtiqueta">Parentesco: </h1><input type="text" name="contactoEmergenciaRelacion" class="form-control" placeholder="Parentesco del paciente" required>
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Nombre del seguro: </h1><input type="text" name="aseguradora" id="email"
-                  class="form-control" placeholder="Nombre del seguro medico del paciente">
+                <h1 class="nombreEtiqueta">Nombre del seguro: </h1><input type="text" name="aseguradora" class="form-control" placeholder="Nombre del seguro medico del paciente">
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Numero de poliza: </h1><input type="text" name="numeroSeguroSocial"
-                  id="email" class="form-control" placeholder="Numero de seguro social">
+                <h1 class="nombreEtiqueta">Numero de poliza: </h1><input type="text" name="numeroSeguroSocial" class="form-control" placeholder="Numero de seguro social">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Hospital de referencia: </h1><input type="text" name="hospitalReferencia"
-                  id="email" class="form-control" placeholder="Hospital de referencia">
+                <h1 class="nombreEtiqueta">Hospital de referencia: </h1><input type="text" name="hospitalReferencia" class="form-control" placeholder="Hospital de referencia">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Medico de Cabecera: </h1><input type="text" name="medicoCabecera" id="email"
-                  class="form-control" placeholder="Nombre de medico del paciente">
+                <h1 class="nombreEtiqueta">Medico de Cabecera: </h1><input type="text" name="medicoCabecera" class="form-control" placeholder="Nombre de medico del paciente">
               </div>
+              <button type="button" class="btn btn-secondary mt-3" onclick="prevStep()">Anterior</button>
+              <button type="button" class="btn btn-info mt-3" onclick="nextStep()">Siguiente</button>
             </div>
           </div>
         </div>
+      </div>
 
-
-        <div class="col-md-6">
+      <!-- PASO 3 -->
+      <div class="step" id="step-3" style="display:none;">
+        <div class="col-md-12">
           <div class="bg-white text-white basic-form">
             <div class="card-body">
               <h5 class="card-title">Enfermedades del paciente</h5>
-              <!-- Tus inputs para el formulario básico -->
               <div class="panel panel-blue contenidoEtiqueta">
                 <h1 class="nombreEtiqueta">Enfermedades: </h1>
                 <input id="enfermedades" name="enfermedades" placeholder="Enfermedades del paciente..." required>
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
                 <h1 class="nombreEtiqueta">Alergias: </h1>
                 <input id="alergias" name="alergias" placeholder="Alergias del paciente..." required>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
                 <h1 class="nombreEtiqueta">Cirugias: </h1>
                 <input id="cirugias" name="cirugias" placeholder="Cirugias del paciente..." required>
               </div>
-
               <div class="panel panel-blue contenidoEtiqueta">
                 <h1 class="nombreEtiqueta">Medicación: </h1>
                 <input id="medicamentos" name="medicacion" placeholder="Madicacion del paciente..." required>
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
                 <h1 class="nombreEtiqueta">Discapacidad: </h1>
                 <input id="discapacidad" name="discapacidad" placeholder="Discapacidades del paciente..." required>
               </div>
+              <button type="button" class="btn btn-secondary mt-3" onclick="prevStep()">Anterior</button>
+              <button type="button" class="btn btn-info mt-3" onclick="nextStep()">Siguiente</button>
             </div>
           </div>
         </div>
+      </div>
 
-
-        <div class="col-md-6">
+      <!-- PASO 4 -->
+      <div class="step" id="step-4" style="display:none;">
+        <div class="col-md-12">
           <div class="bg-white text-dark basic-form">
             <div class="card-body">
               <h5 class="card-title">Salud mental e historial de vacunación</h5>
-              <!-- Tus inputs para el formulario básico -->
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Diagnostico: </h1><input type="text" name="diagnostico" id="email"
-                  class="form-control" placeholder="Diagnostico de la salud mental del paciente">
+                <h1 class="nombreEtiqueta">Diagnostico: </h1><input type="text" name="diagnostico" class="form-control" placeholder="Diagnostico de la salud mental del paciente">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Terapia: </h1><input type="text" name="terapia" id="email"
-                  class="form-control" placeholder="Tratamiento terapeutico del paciente">
+                <h1 class="nombreEtiqueta">Terapia: </h1><input type="text" name="terapia" class="form-control" placeholder="Tratamiento terapeutico del paciente">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Nombre terapeuta: </h1><input type="text" name="contactoTerapeuta" id="email"
-                  class="form-control" placeholder="Nombre del terapeuta del paciente">
+                <h1 class="nombreEtiqueta">Nombre terapeuta: </h1><input type="text" name="contactoTerapeuta" class="form-control" placeholder="Nombre del terapeuta del paciente">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
-                <h1 class="nombreEtiqueta">Contacto del terapeuta: </h1><input type="text" name="telefonoTerapeuta"
-                  id="email" class="form-control" placeholder="Numero de telefono del terapeuta">
+                <h1 class="nombreEtiqueta">Contacto del terapeuta: </h1><input type="text" name="telefonoTerapeuta" class="form-control" placeholder="Numero de telefono del terapeuta">
               </div>
-
               <div class="panel panel-purple contenidoEtiqueta">
                 <h5 class="nombreEtiqueta">Historial de Vacunacion: </h5>
                 <p class="form-text text-dark">Sube una imagen de la cartilla de vacunacion del paciente: </p>
@@ -296,16 +262,44 @@ include 'navbar.php';
                   <input type="file" name="firma" id="file" class="form-control-file">
                 </div>
               </div>
+              <button type="button" class="btn btn-secondary mt-3" onclick="prevStep()">Anterior</button>
+              <button type="submit" class="btn btn-info btn-lg mt-3">Aceptar</button>
             </div>
           </div>
         </div>
       </div>
-      <button type="submit" class="btn-lg btn-info">Aceptar</button>
-    </div>
-  </form>
-  <!--fin del formulario-->
-  </div>
 
+    </div>
+  </div>
+</form>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function showStep(step) {
+    for(let i = 1; i <= totalSteps; i++) {
+      document.getElementById('step-' + i).style.display = (i === step) ? 'block' : 'none';
+    }
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  // Inicializar mostrando el paso 1
+  showStep(currentStep);
+</script>
   <!--SCRIPT PARA LA FUNCION DE BUSQUEDA DE ENFERMEDADES-->
   <script src="../assets/js/BusquedaEnfermedades.js"></script>
 </body>

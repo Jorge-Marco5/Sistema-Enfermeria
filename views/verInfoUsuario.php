@@ -114,7 +114,7 @@ include '../Controllers/verInfoUsuarioController.php';
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-page5" role="tab"
                     aria-controls="nav-contact" aria-selected="false">Seguro Medico</a>
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-page6" role="tab"
-                    aria-controls="nav-contact" aria-selected="false">Consultas medicas</a>
+                    aria-controls="nav-contact" aria-selected="false">visitas a enfermeria</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -347,9 +347,9 @@ include '../Controllers/verInfoUsuarioController.php';
             <div class="tab-pane fade show" id="nav-page6" role="tabpanel" aria-labelledby="nav-home-tab">
             <p class="descripcion text-uppercase" style="display: flex; justify-content: center; width: 100%;">Paciente: <?php echo htmlspecialchars($nombre, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoPaterno, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoMaterno, ENT_QUOTES); ?>,&nbsp; <?php echo htmlspecialchars($matricula, ENT_QUOTES);?></p>
             <div class="row"><!--Inicia fila-->
-                    <p class="nombreEtiqueta">Historial de consultas medicas</p>
-                    <p class="descripcion">🔴 El historial de consultas medicas solo muestra la informacion recopilada de consultas medicas del paciente, dentro del departamento de enfermeria en el ITSPR.</p>
-                    <center><a href="consultaMedica.php?matricula=<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">Agregar consulta medica</a> </center>   
+                    <p class="nombreEtiqueta">Historial de visitas a enfermeria</p>
+                    <p class="descripcion">🔴 El historial de visitas solo muestra la informacion recopilada de visitas a enfermeria del paciente, dentro del departamento de enfermeria en el ITSPR.</p>
+                    <center><a href="consultaMedica.php?matricula=<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">Agregar visita medica</a> </center>   
                     <table class="table table-borderless">
                         <thead>
                             <tr>

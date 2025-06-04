@@ -118,9 +118,8 @@ include 'navbar.php';
       </div>
       <div class="card-body">
         <span class="badge badge-<?php echo $warning; ?>">Urgente</span>
-        <h4 class="card-title mt-2">Consulta Medica</h4>
-        <p class="card-text">Urgencia sentida, Consulta el historial médico del paciente para su tratamiento inmediato y
-          agrega al historial de consultas del paciente. </p>
+        <h4 class="card-title mt-2">Asistencia a enfermeria</h4>
+        <p class="card-text">Urgencia sentida, Consulta el historial médico del paciente en caso de que acuda al servicio medico y agrega su visita en el registro. </p>
       </div>
       <div class="card-footer">
         <a href="listaConsultaMedica.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
@@ -204,7 +203,7 @@ include 'navbar.php';
         </p>
       </div>
       <div class="card-footer">
-        <a href="pagPrueba.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
+        <a href="creditos.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>
       </div>
     </div>
     <!------------------------------------>

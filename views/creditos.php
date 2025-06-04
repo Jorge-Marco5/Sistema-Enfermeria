@@ -13,16 +13,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
     integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
 
+
   <!-- jQuery (necesario para Bootstrap 4) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
   <!-- lazy styling -->
   <link rel="stylesheet" href="../assets/css/lazy.css">
 
-  <link rel="stylesheet" href="../assets/css/verListaPacientes.css">
+  <link rel="stylesheet" href="../assets/css/Hola.css">
 
   <?php
   $primary = "primary";
@@ -61,19 +63,10 @@ if (!isset($_SESSION['matricula'])) {
   </html>
   <?php
 }
-
-include("../Config/conexion.php");
-$sql = "SELECT matricula, nombre, apellido_paterno, apellido_materno, tipo_sangre FROM personas";
-
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 include 'navbar.php';
 ?>
 
 <body>
-
 
   <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['error'])): ?>
     <div id="" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: block;">
@@ -106,65 +99,24 @@ include 'navbar.php';
     }
   </script>
 
-  <main>
-    <p class="text-uppercase text-dark">Ingresa la matricula de la persona que acude al servicio de enfermeria</p>
-    <div style="display: flex; justify-content: center; margin: 10px;">
-      <div class="input-group search-container" style="width: 50%;">
-        <div class="input-group-prepend">
-          <span class="icon iconify search-icon" data-icon="mdi:magnify" id="basic-addon1">
-            <i class="icon fas fa-user" data-icon="ph:user-fill"></i>
-          </span>
-        </div>
-        <input type="text" class="form-control" placeholder="Buscar por matricula..." aria-label="Username"
-          aria-describedby="basic-addon1" onkeyup="filtrarTabla()" id="busqueda">
-      </div>
+  <div class="bg-white p-5 rounded-lg shadow-lg mx-auto" style="max-width: 800px;">
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <h2>Instituto Tecnologico Superior de Poza Rica</h2>
     </div>
-
-    <div class="container table-container"
-      style="background-color: white; height: 400px; overflow-y: auto; margin-top: 0%;">
-      <table class="table user-table">
-        <thead style="position: sticky; top: 0; background-color: #2d8ca2; color: white;">
-          <tr>
-            <th style="width: 16.5%">Matricula</th>
-            <th style="width: 16.5%">Nombre</th>
-            <th style="width: 16.5%">Apellido Paterno</th>
-            <th style="width: 16.5%">Apellido Materno</th>
-            <th style="width: 16.5%">Tipo de Sangre</th>
-            <th style="width: 16.5%">Ver Información</th>
-            <th style="width: 16.5%">Registrar visita</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($result as $fila) { ?>
-            <tr>
-              <td><?php echo htmlspecialchars($fila['matricula'], ENT_QUOTES); ?></td>
-              <td><?php echo htmlspecialchars($fila['nombre'], ENT_QUOTES); ?></td>
-              <td><?php echo htmlspecialchars($fila['apellido_paterno'], ENT_QUOTES); ?></td>
-              <td><?php echo htmlspecialchars($fila['apellido_materno'], ENT_QUOTES); ?></td>
-              <td><?php echo htmlspecialchars($fila['tipo_sangre'], ENT_QUOTES); ?></td>
-              <td>
-                <button class="btn" type="submit" name="verInformacion"
-                  onclick="location.href='verInfoUsuario.php?matricula=<?php echo htmlspecialchars($fila['matricula'], ENT_QUOTES); ?>'">
-                  <span class="icon"><i class="iconify" data-icon="material-symbols:info-i-rounded"
-                      style="font-size: 25px;"></i></span></button>
-              </td>
-              <td>
-                <button class="btn" type="submit" name="Consulta medica"
-                  onclick="location.href='consultaMedica.php?matricula=<?php echo htmlspecialchars($fila['matricula'], ENT_QUOTES); ?>'">
-                  <span class="icon"><i class="iconify" data-icon="material-symbols:medical-services"
-                      style="font-size: 25px;"></i></span></button>
-              </td>
-            </tr>
-          <?php } ?>
-        </tbody>
-      </table>
-    </div>
-
-  </main>
-  <script src="../assets/js/CambiarEstado.js"></script>
-
-  <script src="../assets/js/Busqueda.js"></script>
-
+    <br>
+    <h4>Desarrolladores:</h4>
+    <ul style="display: flex; flex-direction: column; font-size: 1.2rem; background-color: beige; border-radius: 5px; padding-top: 15px; padding-bottom: 15px; ">
+      <li><strong>Campos Crisanto Dafne Marlen</strong> <br> 21ISIC050@itspozarica.edu.mx</li>
+      <br>
+      <li><strong>Hernandez Cano Melissa</strong> <br> 21ISIC050@itspozarica.edu.mx</li>
+      <br>
+      <li><strong>Hernandez Sanchez Hector</strong> <br> 21ISIC050@itspozarica.edu.mx</li>
+      <br>
+      <li><strong>Marcos Canales Jorge Luis</strong> <br> 21ISIC050@itspozarica.edu.mx</li>
+      <br>
+      <li><strong>Tezeta Juarez Sonia Nohemi</strong> <br> 21ISIC050@itspozarica.edu.mx</li>
+    </ul>
+  </div>
 </body>
 
 </html>

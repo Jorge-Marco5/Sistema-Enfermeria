@@ -39,8 +39,7 @@ CREATE TABLE SaludMental (
 
 CREATE TABLE Vacunacion (
     id_vacuna SERIAL PRIMARY KEY,
-    nombre_vacuna VARCHAR(100) NOT NULL,
-    fecha_aplicacion DATE NOT NULL,
+    direccion_img VARCHAR(100) NOT NULL,
     matricula VARCHAR(10)
 );
 

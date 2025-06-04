@@ -99,7 +99,7 @@ include 'navbar.php';
     }
   </script>
 
-  <h1>Esta es una pagina de prueba</h1>
+  <h1 style="margin-left: 20px;">Esta es una pagina de prueba aun en desarrollo</h1>
 </body>
 
 </html>

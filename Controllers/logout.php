@@ -8,7 +8,7 @@ session_unset();
 session_destroy();
 registrarError(
     'Sesion cerrada',
-    "Cierrede la sesion en el sistema.",
+    "Cierre de la sesion en el sistema.",
     'logout.php: línea 5'
 );
 $errorMensaje = 'Cerraste la sesion correctamente';
