@@ -501,7 +501,8 @@ CREATE TABLE vacunas (
     nombre_vacuna VARCHAR(100) NOT NULL,
     fecha_aplicacion DATE NOT NULL,
     dosis VARCHAR(50),
-    observaciones TEXT
+    observaciones TEXT,
+    matricula VARCHAR(15)
 );
 
 SELECT nombre_Discapacidad FROM Lista_Discapacidades ORDER BY nombre_Discapacidad ASC;

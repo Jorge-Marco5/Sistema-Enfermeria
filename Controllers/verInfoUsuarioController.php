@@ -65,6 +65,12 @@ if (isset($_GET['matricula'])) {
     $stmt->execute();
     $resultVacunacion = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+     $sql = "SELECT VC.direccion_img, VS.nombre_vacuna, VS.fecha_aplicacion, VS.dosis, VS.observaciones, VS.matricula FROM vacunacion VC LEFT JOIN vacunas VS ON VC.matricula = VS.matricula WHERE VC.matricula = :matricula";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':matricula', $matricula, PDO::PARAM_STR);
+    $stmt->execute();
+    $resultVacunas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     $sql = "SELECT aseguradora, numero_poliza, hospital_referencia, medico_cabecera FROM seguromedico WHERE matricula = :matricula";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':matricula', $matricula, PDO::PARAM_STR);

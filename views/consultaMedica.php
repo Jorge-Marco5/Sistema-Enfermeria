@@ -110,8 +110,7 @@ include "../Controllers/consultaMedicaController.php";
 
         <h3 class="text">
             <i class="iconify" data-icon="twemoji:stethoscope" style="color: #007bff;"></i>
-            Consulta Medica
-
+            Visita a enfermeria y vacunacion
         </h3>
         <div class="row">
             <ul class="list-group">
@@ -152,32 +151,82 @@ include "../Controllers/consultaMedicaController.php";
 
 
         <div class="col-md-12">
+            <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
             <div class="bg-white text-dark basic-form">
-                <!--form-->
-                <form id="formConsultaMedica" action="../Controllers/aggConsultaMedica.php" method="POST"
-                    enctype="multipart/form-data">
-                    <input type="hidden" name="matricula"
-                        value="<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">
-                    <div class="card-body">
-                        <br>
-                        <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
-                        <br>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-page1"
+                            role="tab" aria-controls="nav-home" aria-selected="true">Visita a enfermeria</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-page2" role="tab"
+                            aria-controls="nav-profile" aria-selected="false">Registrar nueva vacuna</a>
+                    </div>
+                </nav>
 
-                        <div class="panel form-group">
-                            <h1 class="nombreEtiqueta">Motivo de la consulta: </h1>
-                            <textarea class="form-control" name="motivo_consulta" id="description1" rows="3"
-                                placeholder="Motivos y sintomas por el que asiste el paciente a consulta medica..."></textarea>
-                        </div>
-                
+                <div class="tab-content" id="nav-tabContent">
+                    <!--Inicia ventana 1-->
+                    <div class="tab-pane fade show active col-md-12" id="nav-page1" role="tabpanel"
+                        aria-labelledby="nav-home-tab" style="height: 300px;">
+                        <!--Registrar visita medica-->
+                        <!--form-->
+                        <form id="formConsultaMedica" action="../Controllers/aggConsultaMedica.php" method="POST"
+                            enctype="multipart/form-data">
+                            <input type="hidden" name="matricula"
+                                value="<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">
+                            <div class="card-body">
+                                <br>
+
+                                <div class="panel form-group">
+                                    <h1 class="nombreEtiqueta">Motivo de la consulta: </h1>
+                                    <textarea class="form-control" name="motivo_consulta" id="description1" rows="3"
+                                        placeholder="Motivos y sintomas por el que asiste el paciente a consulta medica..."
+                                        required></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <center><button type="submit" form="formConsultaMedica" class="btn btn-info">Guardar
+                                consulta</button></center>
                     </div>
 
-                </form>
+                    <!--Ventana 2-->
+                    <div class="tab-pane fade" id="nav-page2" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        style="height: 300px;">
+                        <!--Tabla para el registro de vacunas-->
+                        <!-- Tabla de vacunas actualizado-->
+                        <div class="col-12">
+                            <h2 class="text-center">Agregar nuevo registro de vacuna aplicada</h2>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Nombre de Vacuna</th>
+                                            <th>Dosis</th>
+                                            <th>Observaciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <form id="formRegistrarVacuna"
+                                            action="../Controllers/agregarRegistroVacunaController.php" method="POST"
+                                            enctype="multipart/form-data">
+                                            <td><input type="text" name="nombreVacuna" required style="margin: 10px; ">
+                                            </td>
+                                            <td><input type="number" name="dosis" placeholder="en ml" required><label
+                                                    style="margin: 10px; font-size: 1.2rem;"><strong>ml</strong></label>
+                                            </td>
+                                            <td><textarea name="Observaciones" id="" style="margin: 10px;"></textarea>
+                                            </td>
+                                            <input name="matricula" value="<?php echo $matricula ?>" hidden>
+                                        </form>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <center><button type="submit" form="formRegistrarVacuna" class="btn btn-info">Guardar
+                                        visita</button></center>
+                            </div>
+                        </div>
+                    </div><!-- Termina fila -->
+                </div><!--Termina el contenido de la ventana 2-->
             </div>
-
         </div>
-        <button type="button" class="btn-lg btn-info" data-toggle="modal" data-target="#GuardarConsultaModal">
-            Guardar consulta
-        </button>
     </div>
 
 
@@ -377,11 +426,19 @@ include "../Controllers/consultaMedicaController.php";
                         </div><!--Termina fila-->
                     </div>
 
-                    <!--Ventana 4-->
+                    <!-- Ventana 4 actualizado-->
                     <div class="tab-pane fade" id="nav-page4" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        <div class="row"><!--Inicia fila-->
-                            <div class="panel panel-blue contenidoImagen">
-                                <h1 class="nombreEtiqueta">Cartilla de vacunacion del paciente</h1>
+                        <p class="descripcion text-uppercase"
+                            style="display: flex; justify-content: center; width: 100%;">
+                            Paciente:
+                            <?php echo htmlspecialchars($nombre, ENT_QUOTES); ?>&nbsp;<?php echo htmlspecialchars($apellidoPaterno, ENT_QUOTES); ?>&nbsp;<?php echo htmlspecialchars($apellidoMaterno, ENT_QUOTES); ?>,&nbsp;
+                            <?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>
+                        </p>
+
+                        <div class="row">
+                            <!-- Imagen de cartilla -->
+                            <div class="panel panel-blue contenidoImagen mb-4">
+                                <h1 class="nombreEtiqueta">Cartilla de vacunación del paciente</h1>
                                 <?php foreach ($resultVacunacion as $fila):
                                     $imgPath = "../assets/Img/CartillasVacunacion/" . htmlspecialchars($fila['direccion_img'], ENT_QUOTES);
                                     if (!empty($fila['direccion_img']) && file_exists($imgPath)): ?>
@@ -392,7 +449,41 @@ include "../Controllers/consultaMedicaController.php";
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </div>
-                        </div><!--Termina fila-->
+
+                            <!-- Tabla de vacunas actualizado-->
+                            <div class="col-12">
+                                <h2 class="text-center">Registros de Vacunas Aplicadas</h2>
+                                <?php if (!empty($resultVacunacion)): ?>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>Nombre de Vacuna</th>
+                                                    <th>Fecha de Aplicación</th>
+                                                    <th>Dosis</th>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($resultVacunas as $registro): ?>
+                                                    <tr>
+                                                        <td><?php echo htmlspecialchars($registro['nombre_vacuna'], ENT_QUOTES); ?>
+                                                        </td>
+                                                        <td><?php echo htmlspecialchars($registro['fecha_aplicacion'], ENT_QUOTES); ?>
+                                                        </td>
+                                                        <td><?php echo htmlspecialchars($registro['dosis'], ENT_QUOTES); ?></td>
+                                                        <td><?php echo htmlspecialchars($registro['observaciones'], ENT_QUOTES); ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php else: ?>
+                                    <p class="text-center">No hay registros de vacunación disponibles.</p>
+                                <?php endif; ?>
+                            </div>
+                        </div><!-- Termina fila -->
                     </div>
 
                     <!--Ventana 5-->
@@ -432,33 +523,6 @@ include "../Controllers/consultaMedicaController.php";
             </div>
         </div>
     </div><!----Fin modal-->
-
-    <!--Modal guardar datos-->
-    <div class="modal fade" id="GuardarConsultaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Guardar información</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-uppercase">Esta consulta medica ¿Requiere de atencion en un hospital cercano?</p>
-                    <p class="text-uppercase text-danger"><strong>Seleccione emergencia y se generara un reporte con los
-                            datos anteriores y un reporte resumido para el personal de ambulancia y canalizarlo al
-                            hospital correspondiente.</strong></p>
-                    <p class="text-uppercase text-info"><strong>En caso contrario la consulta se guarda en el historial
-                            de consultas del paciente, ¡los datos de la consulta no se pueden modificar!.</strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Emergencia</button>
-                    <button type="submit" form="formConsultaMedica" class="btn btn-info">Guardar consulta</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 
