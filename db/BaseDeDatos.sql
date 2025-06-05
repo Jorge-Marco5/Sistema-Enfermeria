@@ -86,14 +86,6 @@ CREATE TABLE consulta_Medica (
     matricula VARCHAR(20) NOT NULL,
     fecha DATE NOT NULL,
     motivo_consulta TEXT NOT NULL,
-    temperatura DECIMAL(5, 2) NOT NULL,
-    presion_arterial VARCHAR(8) NOT NULL,
-    frecuencia_cardiaca VARCHAR(8) NOT NULL,
-    peso VARCHAR(6) NOT NULL,
-    estatura VARCHAR(6) NOT NULL,
-    diagnostico TEXT NOT NULL,
-    tratamiento TEXT NOT NULL,
-    requiere_urgencia BOOLEAN DEFAULT FALSE
 );
 
 
@@ -504,6 +496,14 @@ CREATE TABLE Campañas (
     fechaAgregada TIMESTAMP
 );
 
+CREATE TABLE vacunas (
+    id SERIAL PRIMARY KEY,
+    nombre_vacuna VARCHAR(100) NOT NULL,
+    fecha_aplicacion DATE NOT NULL,
+    dosis VARCHAR(50),
+    observaciones TEXT
+);
+
 SELECT nombre_Discapacidad FROM Lista_Discapacidades ORDER BY nombre_Discapacidad ASC;
 
 SELECT * FROM Lista_Discapacidades;
@@ -550,4 +550,3 @@ LEFT JOIN HistorialMedico h ON p.id_persona = h.id_persona
 LEFT JOIN SeguroMedico s ON p.id_persona = s.id_persona
 LEFT JOIN AutorizacionesMedicas a ON p.id_persona = a.id_persona
 WHERE p.id_persona = 1;
-

@@ -109,7 +109,7 @@ include "../Controllers/consultaMedicaController.php";
         if (isset($_GET['id_consulta'])) {
             $id_consulta = $_GET['id_consulta'];
             
-            $sql = "SELECT fecha, motivo_consulta, temperatura, presion_arterial, frecuencia_cardiaca, peso, estatura, diagnostico, tratamiento, requiere_urgencia
+            $sql = "SELECT fecha, motivo_consulta
             FROM consulta_medica 
             WHERE id_consulta = :id_consulta";
     
@@ -121,14 +121,7 @@ include "../Controllers/consultaMedicaController.php";
             if ($row) {
                 $fecha = $row['fecha'];
                 $motivo_consulta = $row['motivo_consulta'];
-                $temperatura = $row['temperatura'];
-                $presion_arterial = $row['presion_arterial'];
-                $frecuencia_cardiaca = $row['frecuencia_cardiaca'];
-                $peso = $row['peso'];
-                $estatura = $row['estatura'];
-                $diagnostico = $row['diagnostico'];
-                $tratamiento = $row['tratamiento'];
-                $requiere_urgencia = $row['requiere_urgencia'];
+                
             }
 
         } else {
@@ -154,12 +147,20 @@ include "../Controllers/consultaMedicaController.php";
                     <p class="text-left text-info text-uppercase font-weight-bold">Matricula:&nbsp;
                     <p class="text-left text-dark"></p><?php echo htmlspecialchars($matricula, ENT_QUOTES); ?></p>
                 </li>
-                <li class="list-group-item">
-                    <p class="text-left text-info text-uppercase font-weight-bold">Nombre del paciente:&nbsp;
-                    <p class="text-left text-dark"></p><?php echo htmlspecialchars($nombre, ENT_QUOTES); ?>
-                    <?php echo htmlspecialchars($apellido_paterno, ENT_QUOTES); ?>
-                    <?php echo htmlspecialchars($apellido_materno, ENT_QUOTES); ?></p>
+           <li class="list-group-item">
+                      <p class="text-left text-info text-uppercase font-weight-bold mb-1">Nombre:</p>
+                      <p class="text-left text-dark"><?php echo htmlspecialchars($nombre, ENT_QUOTES); ?></p>
                 </li>
+                <li class="list-group-item">
+                      <p class="text-left text-info text-uppercase font-weight-bold mb-1">Apellido Paterno:</p>
+                      <p class="text-left text-dark"><?php echo htmlspecialchars($apellido_paterno, ENT_QUOTES); ?></p>
+                </li>    
+                <li class="list-group-item">
+                     <p class="text-left text-info text-uppercase font-weight-bold mb-1">Apellido Materno:</p>
+                     <p class="text-left text-dark"><?php echo htmlspecialchars($apellido_materno, ENT_QUOTES); ?></p>
+                </li>
+
+                
                 <li class="list-group-item">
                     <p class="text-left text-info text-uppercase font-weight-bold">Fecha de nacimiento:&nbsp;
                     <p class="text-left text-dark"></p><?php echo htmlspecialchars($fechaNacimiento, ENT_QUOTES); ?></p>
@@ -193,84 +194,6 @@ include "../Controllers/consultaMedicaController.php";
                             <p class="text-dark" style="text-align:justify; font-size: 18px;"><?php echo htmlspecialchars($motivo_consulta)?></p>
                         </div>
                         <br>
-                        <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
-                        <br>
-                        <h4 class="text-dark text-center">Signos vitales</h4>
-
-                        <form class="col-md-12">
-                            <div class="form-row ">
-                                <div class="col-auto form-group">
-                                    <label class="sr-only" for="password3">Temperatura</label>
-                                    <h1 class="nombreEtiqueta">Temperatura: </h1>
-                                    <div class="input-group mb-3">
-                                        <p class="form-control text-dark"><?php echo htmlspecialchars($temperatura)?></p>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">°C</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto form-group">
-                                    <label class="sr-only" for="password3">Presion arterial</label>
-                                    <h1 class="nombreEtiqueta">Presion arterial: </h1>
-                                    <div class="input-group mb-3">
-                                    <p class="form-control text-dark"><?php echo htmlspecialchars($presion_arterial)?></p>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">mmHg</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto form-group">
-                                    <label class="sr-only" for="password3">Frecuencia cardiaca</label>
-                                    <h1 class="nombreEtiqueta">Frecuencia cardiaca: </h1>
-                                    <div class="input-group mb-3">
-                                    <p class="form-control text-dark"><?php echo htmlspecialchars($frecuencia_cardiaca)?></p>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">lpm</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto form-group">
-                                    <label class="sr-only" for="password3">Peso</label>
-                                    <h1 class="nombreEtiqueta">Peso: </h1>
-                                    <div class="input-group mb-3">
-                                    <p class="form-control text-dark"><?php echo htmlspecialchars($peso)?></p>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">kg</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto form-group">
-                                    <label class="sr-only" for="password3">Estatura</label>
-                                    <h1 class="nombreEtiqueta">Estatura: </h1>
-                                    <div class="input-group mb-3">
-                                    <p class="form-control text-dark"><?php echo htmlspecialchars($estatura)?></p>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">m</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-auto"></div>
-                            </div>
-                        </form>
-
-                        <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
-                        <br>
-                        <h4 class="text-dark text-center">Diagnostico y tratamiento</h4>
-
-                        <div class="panel form-group">
-                            <h1 class="nombreEtiqueta">Diagnostico: </h1>
-                            <p class="text-dark" style="text-align: justify; font-size: 18px;"><?php echo htmlspecialchars($diagnostico)?></p>
-                        </div>
-                        <br>
-                        <div class="panel form-group">
-                            <h1 class="nombreEtiqueta">Tratamiento: </h1>
-                            <p class="text-dark" style="text-align: justify; font-size: 18px;"><?php echo htmlspecialchars($tratamiento)?></p>
-                        </div>
-
                     </div>
 
                 </form>

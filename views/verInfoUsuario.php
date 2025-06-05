@@ -114,7 +114,7 @@ include '../Controllers/verInfoUsuarioController.php';
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-page5" role="tab"
                     aria-controls="nav-contact" aria-selected="false">Seguro Medico</a>
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-page6" role="tab"
-                    aria-controls="nav-contact" aria-selected="false">visitas a enfermeria</a>
+                    aria-controls="nav-contact" aria-selected="false">Consultas medicas</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -284,24 +284,59 @@ include '../Controllers/verInfoUsuarioController.php';
                 </div><!--Termina fila-->
             </div>
 
-            <!--Ventana 4-->
-            <div class="tab-pane fade" id="nav-page4" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <p class="descripcion text-uppercase" style="display: flex; justify-content: center; width: 100%;">Paciente: <?php echo htmlspecialchars($nombre, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoPaterno, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoMaterno, ENT_QUOTES); ?>,&nbsp; <?php echo htmlspecialchars($matricula, ENT_QUOTES);?></p>
-                <div class="row"><!--Inicia fila-->
-                    <div class="panel panel-blue contenidoImagen">
-                        <h1 class="nombreEtiqueta">Cartilla de vacunacion del paciente</h1>
-                        <?php foreach ($resultVacunacion as $fila):
-                            $imgPath = "../assets/Img/CartillasVacunacion/" . htmlspecialchars($fila['direccion_img'], ENT_QUOTES);
-                            if (!empty($fila['direccion_img']) && file_exists($imgPath)): ?>
-                                <img src="<?php echo $imgPath; ?>" class="img-fluid mx-auto d-block"
-                                    alt="Cartilla de vacunación">
-                            <?php else: ?>
-                                <p>No hay imagen de cartilla disponible.</p>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div><!--Termina fila-->
-            </div>
+     <!-- Ventana 4 actualizado-->
+<div class="tab-pane fade" id="nav-page4" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <p class="descripcion text-uppercase" style="display: flex; justify-content: center; width: 100%;">
+        Paciente: <?php echo htmlspecialchars($nombre, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoPaterno, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoMaterno, ENT_QUOTES); ?>,&nbsp; <?php echo htmlspecialchars($matricula, ENT_QUOTES);?>
+    </p>
+    
+    <div class="row">
+        <!-- Imagen de cartilla -->
+        <div class="panel panel-blue contenidoImagen mb-4">
+            <h1 class="nombreEtiqueta">Cartilla de vacunación del paciente</h1>
+            <?php foreach ($resultVacunacion as $fila):
+                $imgPath = "../assets/Img/CartillasVacunacion/" . htmlspecialchars($fila['direccion_img'], ENT_QUOTES);
+                if (!empty($fila['direccion_img']) && file_exists($imgPath)): ?>
+                    <img src="<?php echo $imgPath; ?>" class="img-fluid mx-auto d-block" alt="Cartilla de vacunación">
+                <?php else: ?>
+                    <p>No hay imagen de cartilla disponible.</p>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Tabla de vacunas actualizado--> 
+        <div class="col-12">
+            <h2 class="text-center">Registros de Vacunas Aplicadas</h2>
+            <?php if (!empty($resultVacunacion)): ?>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Nombre de Vacuna</th>
+                                <th>Fecha de Aplicación</th>
+                                <th>Dosis</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($resultVacunacion as $registro): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($registro['nombre_vacuna'], ENT_QUOTES); ?></td>
+                                    <td><?php echo htmlspecialchars($registro['fecha_aplicacion'], ENT_QUOTES); ?></td>
+                                    <td><?php echo htmlspecialchars($registro['dosis'], ENT_QUOTES); ?></td>
+                                    <td><?php echo htmlspecialchars($registro['observaciones'], ENT_QUOTES); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php else: ?>
+                <p class="text-center">No hay registros de vacunación disponibles.</p>
+            <?php endif; ?>
+        </div>
+    </div><!-- Termina fila -->
+</div>
+
 
             <!--Ventana 5-->
             <div class="tab-pane fade" id="nav-page5" role="tabpanel" aria-labelledby="nav-contact-tab">
@@ -347,9 +382,9 @@ include '../Controllers/verInfoUsuarioController.php';
             <div class="tab-pane fade show" id="nav-page6" role="tabpanel" aria-labelledby="nav-home-tab">
             <p class="descripcion text-uppercase" style="display: flex; justify-content: center; width: 100%;">Paciente: <?php echo htmlspecialchars($nombre, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoPaterno, ENT_QUOTES);?>&nbsp;<?php echo htmlspecialchars($apellidoMaterno, ENT_QUOTES); ?>,&nbsp; <?php echo htmlspecialchars($matricula, ENT_QUOTES);?></p>
             <div class="row"><!--Inicia fila-->
-                    <p class="nombreEtiqueta">Historial de visitas a enfermeria</p>
-                    <p class="descripcion">🔴 El historial de visitas solo muestra la informacion recopilada de visitas a enfermeria del paciente, dentro del departamento de enfermeria en el ITSPR.</p>
-                    <center><a href="consultaMedica.php?matricula=<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">Agregar visita medica</a> </center>   
+                    <p class="nombreEtiqueta">Historial de consultas medicas</p>
+                    <p class="descripcion">🔴 El historial de consultas medicas solo muestra la informacion recopilada de consultas medicas del paciente, dentro del departamento de enfermeria en el ITSPR.</p>
+                    <center><a href="consultaMedica.php?matricula=<?php echo htmlspecialchars($matricula, ENT_QUOTES); ?>">Agregar consulta medica</a> </center>   
                     <table class="table table-borderless">
                         <thead>
                             <tr>

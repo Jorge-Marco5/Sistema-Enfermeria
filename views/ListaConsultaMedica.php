@@ -107,7 +107,7 @@ include 'navbar.php';
   </script>
 
   <main>
-    <p class="text-uppercase text-dark">Ingresa la matricula de la persona que acude al servicio de enfermeria</p>
+    <p class="text-uppercase text-dark">Ingresa la matricula de la persona que acude a consulta medica</p>
     <div style="display: flex; justify-content: center; margin: 10px;">
       <div class="input-group search-container" style="width: 50%;">
         <div class="input-group-prepend">
@@ -131,7 +131,7 @@ include 'navbar.php';
             <th style="width: 16.5%">Apellido Materno</th>
             <th style="width: 16.5%">Tipo de Sangre</th>
             <th style="width: 16.5%">Ver Información</th>
-            <th style="width: 16.5%">Registrar visita</th>
+            <th style="width: 16.5%">Consulta Medica</th>
           </tr>
         </thead>
         <tbody>

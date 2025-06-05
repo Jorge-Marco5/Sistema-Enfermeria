@@ -107,7 +107,7 @@ include 'navbar.php';
   <!--Contenido de la pagina-->
   <!--Formulario para crear un nuevo usuario-->
 <form id="createUserForm" action="../Controllers/aggUserDataController.php" method="POST" enctype="multipart/form-data">
-  <div class="containerInfo container mt-4">
+   <div class="bg-white p-5 rounded-lg shadow-lg mx-auto" style="max-width: 800px;">
     <h2 class="card-title">Datos de salud del paciente</h2>
     <div class="row g-4">
 
@@ -300,7 +300,7 @@ include 'navbar.php';
   // Inicializar mostrando el paso 1
   showStep(currentStep);
 </script>
-  <!--SCRIPT PARA LA FUNCION DE BUSQUEDA DE ENFERMEDADES-->
+<!--SCRIPT PARA LA FUNCION DE BUSQUEDA DE ENFERMEDADES-->
   <script src="../assets/js/BusquedaEnfermedades.js"></script>
 </body>
 

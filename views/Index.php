@@ -44,7 +44,7 @@ if (!isset($_SESSION['matricula'])) {
     "Inicia sesion antes de ingresar al sistema.",
     'validarSesion.php: línea 8'
   );
-  //$errorMensaje = '¡Por favor!, inicia sesion antes de ingresar al sistema';
+  $errorMensaje = '¡Por favor!, inicia sesion antes de ingresar al sistema';
   ?>
   <html>
 
@@ -118,8 +118,9 @@ include 'navbar.php';
       </div>
       <div class="card-body">
         <span class="badge badge-<?php echo $warning; ?>">Urgente</span>
-        <h4 class="card-title mt-2">Asistencia a enfermeria</h4>
-        <p class="card-text">Urgencia sentida, Consulta el historial médico del paciente en caso de que acuda al servicio medico y agrega su visita en el registro. </p>
+        <h4 class="card-title mt-2">Consulta Medica</h4>
+        <p class="card-text">Urgencia sentida, Consulta el historial médico del paciente para su tratamiento inmediato y
+          agrega al historial de consultas del paciente. </p>
       </div>
       <div class="card-footer">
         <a href="listaConsultaMedica.php" class="btn btn-<?php echo $info; ?>">Aceptar</a>

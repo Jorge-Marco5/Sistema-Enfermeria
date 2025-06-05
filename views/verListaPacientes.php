@@ -131,6 +131,7 @@ include 'navbar.php';
             <th style="width: 16.5%">Tipo de Sangre</th>
             <th style="width: 16.5%">Ver Información</th>
             <th style="width: 16.5%">Descargar</th>
+            <th style="width: 16.5%">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -151,6 +152,12 @@ include 'navbar.php';
                 <a href="../Controllers/descargaExcel.php?matricula=<?php echo htmlspecialchars($fila['matricula'], ENT_QUOTES);  ?>">
                 <button class="btn" type="submit" name="descargar" onclick="location.href='">
                   <span class="icon"><i class="iconify" data-icon="material-symbols:download"
+                      style="font-size: 25px;"></i></span></button></a>
+              </td>
+              <td>
+                <a href="../Controllers/eliminarUsuarioController.php?matricula=<?php echo htmlspecialchars($fila['matricula'], ENT_QUOTES);  ?>">
+                <button class="btn" type="submit" name="descargar" onclick="location.href='">
+                  <span class="icon"><i class="iconify" data-icon="material-symbols:delete"
                       style="font-size: 25px;"></i></span></button></a>
               </td>
             </tr>
